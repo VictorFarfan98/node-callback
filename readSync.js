@@ -5,7 +5,10 @@ function readFile(){
     var textPlain = buffer.toString()
     var myArray = textPlain.split("\n")
     myArray.forEach(function(value){
-        console.log(value);
+        console.log(value.split(" ").length);
+        fs.appendFileSync('./writeTest', value.split(" ").length +'\n');
     });
+    //fs.writeFileSync("./writeTest", myArray);
 }
+
 readFile()
